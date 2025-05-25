@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>StackChallengePalindrome.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #c792ea; font-style: italic;}
+.s1 { color: #eeffff;}
+.s2 { color: #89ddff;}
+.s3 { color: #616161; font-style: italic;}
+.s4 { color: #c3e88d;}
+.ln { color: #424242; font-weight: normal; font-style: normal; }
+</style>
+</head>
+<body bgcolor="#212121">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+StackChallengePalindrome.py</font>
+</center></td></tr></table>
+<pre><a name="l1"><span class="ln">1    </span></a><span class="s0">def </span><span class="s1">is_palindrome_using_stack</span><span class="s2">(</span><span class="s1">input_string</span><span class="s2">):</span>
+<a name="l2"><span class="ln">2    </span></a>    <span class="s3"># Create an empty stack (list)</span>
+<a name="l3"><span class="ln">3    </span></a>    <span class="s1">stack </span><span class="s2">= []</span>
+<a name="l4"><span class="ln">4    </span></a>
+<a name="l5"><span class="ln">5    </span></a>    <span class="s3"># Push all characters onto the stack</span>
+<a name="l6"><span class="ln">6    </span></a>    <span class="s0">for </span><span class="s1">char </span><span class="s0">in </span><span class="s1">input_string</span><span class="s2">:</span>
+<a name="l7"><span class="ln">7    </span></a>        <span class="s1">stack</span><span class="s2">.</span><span class="s1">append</span><span class="s2">(</span><span class="s1">char</span><span class="s2">)</span>
+<a name="l8"><span class="ln">8    </span></a>
+<a name="l9"><span class="ln">9    </span></a>    <span class="s3"># Pop characters to build the reversed string</span>
+<a name="l10"><span class="ln">10   </span></a>    <span class="s1">reversed_string </span><span class="s2">= </span><span class="s4">&quot;&quot;</span>
+<a name="l11"><span class="ln">11   </span></a>    <span class="s0">while </span><span class="s1">stack</span><span class="s2">:</span>
+<a name="l12"><span class="ln">12   </span></a>        <span class="s1">reversed_string </span><span class="s2">+= </span><span class="s1">stack</span><span class="s2">.</span><span class="s1">pop</span><span class="s2">()  </span><span class="s3"># Pop from stack and append to reversed_string</span>
+<a name="l13"><span class="ln">13   </span></a>
+<a name="l14"><span class="ln">14   </span></a>    <span class="s3"># Compare original and reversed strings</span>
+<a name="l15"><span class="ln">15   </span></a>    <span class="s0">return </span><span class="s1">input_string </span><span class="s2">== </span><span class="s1">reversed_string</span>
+<a name="l16"><span class="ln">16   </span></a>
+<a name="l17"><span class="ln">17   </span></a>
+<a name="l18"><span class="ln">18   </span></a><span class="s3"># Example usage:</span>
+<a name="l19"><span class="ln">19   </span></a><span class="s1">test_str </span><span class="s2">= </span><span class="s4">&quot;racecar&quot;</span>
+<a name="l20"><span class="ln">20   </span></a><span class="s1">print</span><span class="s2">(</span><span class="s4">f&quot;Is '</span><span class="s2">{</span><span class="s1">test_str</span><span class="s2">}</span><span class="s4">' a palindrome? </span><span class="s2">{</span><span class="s1">is_palindrome_using_stack</span><span class="s2">(</span><span class="s1">test_str</span><span class="s2">)}</span><span class="s4">&quot;</span><span class="s2">)  </span><span class="s3"># True</span>
+<a name="l21"><span class="ln">21   </span></a>
+<a name="l22"><span class="ln">22   </span></a><span class="s1">test_str2 </span><span class="s2">= </span><span class="s4">&quot;hello&quot;</span>
+<a name="l23"><span class="ln">23   </span></a><span class="s1">print</span><span class="s2">(</span><span class="s4">f&quot;Is '</span><span class="s2">{</span><span class="s1">test_str2</span><span class="s2">}</span><span class="s4">' a palindrome? </span><span class="s2">{</span><span class="s1">is_palindrome_using_stack</span><span class="s2">(</span><span class="s1">test_str2</span><span class="s2">)}</span><span class="s4">&quot;</span><span class="s2">)  </span><span class="s3"># False</span>
+<a name="l24"><span class="ln">24   </span></a>
+<a name="l25"><span class="ln">25   </span></a><span class="s3"># 3. A man, a plan, a canal, Panama!</span>
+<a name="l26"><span class="ln">26   </span></a><span class="s3"># (Arguably the most famous one. A tribute to the construction of the Panama Canal.)</span>
+<a name="l27"><span class="ln">27   </span></a>
+<a name="l28"><span class="ln">28   </span></a><span class="s3"># 4. Doc, note I dissent. A fast never prevents a fatness. I diet on cod.&quot;</span>
+<a name="l29"><span class="ln">29   </span></a><span class="s3"># (A rebellious eater's palindrome.)</span>
+<a name="l30"><span class="ln">30   </span></a>
+<a name="l31"><span class="ln">31   </span></a><span class="s3"># 5. &quot;Are we not pure? “No sir!” Panama’s moody Noriega brags. “It is garbage!” Irony dooms a man — a prisoner up to new era.&quot;</span>
+<a name="l32"><span class="ln">32   </span></a><span class="s3"># (Dark, poetic, and surprisingly coherent.)</span>
+<a name="l33"><span class="ln">33   </span></a>
+<a name="l34"><span class="ln">34   </span></a><span class="s3"># &quot;Was it a car or a cat I saw?&quot;</span>
+<a name="l35"><span class="ln">35   </span></a><span class="s3">#</span>
+<a name="l36"><span class="ln">36   </span></a><span class="s3"># &quot;Go hang a salami, I’m a lasagna hog.&quot;</span>
+<a name="l37"><span class="ln">37   </span></a><span class="s3"># (Truly a pasta-lover’s eternal dilemma.)</span>
+<a name="l38"><span class="ln">38   </span></a>
+<a name="l39"><span class="ln">39   </span></a><span class="s3"># &quot;Evil is a name of a foeman as I live.&quot;</span>
+<a name="l40"><span class="ln">40   </span></a></pre>
+</body>
+</html>
